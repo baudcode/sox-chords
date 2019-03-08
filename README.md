@@ -1,4 +1,5 @@
-### Sox-Chords
+### Sox-Chords  
+[![Build Status](https://travis-ci.org/baudcode/sox-chords.svg?branch=master)](https://travis-ci.org/baudcode/sox-chords)
 
 With the sox-chords module you can generate guitar chords using sox.
 Currently supported chords are:
