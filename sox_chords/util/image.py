@@ -1,5 +1,5 @@
 from sox_chords import values
-import matplotlib.pyplot as plt
+
 # from random import randint
 
 import numpy as np
@@ -12,7 +12,7 @@ matplotlib.rcParams['axes.titlesize'] = 8
 matplotlib.rcParams['axes.labelsize'] = 5
 matplotlib.rcParams['xtick.labelsize'] = 5
 matplotlib.rcParams['ytick.labelsize'] = 5
-
+import matplotlib.pyplot as plt
 
 def data_to_image(data=None):
     """
