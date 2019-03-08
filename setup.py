@@ -53,6 +53,9 @@ setuptools.setup(
     description='Generating Guitar Chords from Sox',
     url='https://github.com/baudcode/sox-chords',
     author='Malte Koch',
+    license='MIT',
+    download_url='https://github.com/baudcode/sox-chords/archive/v0.1.tar.gz',
+    keywods=["chords", "scales", "notes", "guitar", "sox"],
     author_email='malte-koch@gmx.net',
     maintainer='Malte Koch',
     maintainer_email='malte-koch@gmx.net',
@@ -65,5 +68,17 @@ setuptools.setup(
         ],
     },
     ext_modules=[],
-    setup_requires=["matplotlib<3.0"]
+    setup_requires=["matplotlib<3.0"],
+    classifiers=[
+        'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+        'Intended Audience :: Developers',      # Define that your audience are developers
+        'Topic :: Software Development :: Build Tools',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+    ],
 )

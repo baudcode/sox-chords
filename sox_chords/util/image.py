@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 from sox_chords import values
 
 # from random import randint
@@ -9,6 +8,7 @@ from PIL import Image
 
 import matplotlib
 matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 matplotlib.rcParams['axes.titlesize'] = 8
 matplotlib.rcParams['axes.labelsize'] = 5
 matplotlib.rcParams['xtick.labelsize'] = 5
