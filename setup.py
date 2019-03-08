@@ -51,7 +51,7 @@ setuptools.setup(
     name='sox_chords',
     version=sox_chords.__version__,
     description='Generating Guitar Chords from Sox',
-    url='',
+    url='https://github.com/baudcode/sox-chords',
     author='Malte Koch',
     author_email='malte-koch@gmx.net',
     maintainer='Malte Koch',
