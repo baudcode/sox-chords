@@ -22,4 +22,4 @@ Currently supported chords are:
 
 You can create Scales as well.
 
-For examples please see **examples/how-to.ipynb**
+For examples please see **examples/How To.ipynb**
