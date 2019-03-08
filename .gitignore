@@ -69,14 +69,8 @@ checkpoints/
 *.swp
 *.gz
 *.gif
-_todo.md
-logs/
-decoder_model/
-encoder_model/
-/core/network/ncode_no_lr_decay_lr_0_0002_d_op_2_gfm_0_05/
-/core/network/ncode_no_lr_decay_lr_0_0002_d_op_2_gfm_0/
-!/core/network/chromagram/dataset.hdf5
 .config/
 .env/
 .pytest_cache/
 **.ipynb_checkpoints/
+.venv/

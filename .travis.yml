@@ -3,10 +3,13 @@ sudo: required
 python:
     - '3.6'
     - '2.7'
+before_install:
+  - sudo apt-get install -y sox
+
 install:
     - pip install 'pytest'
     - pip install 'numpy'
-    - pip install 'librosa==0.5'
+    - pip install 'librosa'
     - pip install 'matplotlib'
     - pip install 'requests'
     - pip install 'bs4'

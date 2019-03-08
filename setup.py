@@ -65,5 +65,5 @@ setuptools.setup(
         ],
     },
     ext_modules=[],
-    setup_requires=["librosa==0.5", "matplotlib<3.0"]
+    setup_requires=["matplotlib<3.0"]
 )
