@@ -8,7 +8,7 @@ from sox_chords.music.utils import get_notes_from_pattern
 
 class Triad(Chord):
 
-    core_pattern = [0,2,4]
+    core_pattern = [0, 2, 4]
     notation = []
     name = "Triad"
 
@@ -38,5 +38,6 @@ class DiminishedTriad(Triad):
 
     notation = [0, Interval.MINOR_THIRD, Interval.DIMINISHED_FIFTH]
     name = "°"
+
 
 chords = [MajorTriad, MinorTriad, AugmentedTriad, DiminishedTriad]

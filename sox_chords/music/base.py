@@ -74,7 +74,7 @@ semi_tone_core_mapping = {
 
 class Note(object):
     """
-        Note: Note to be played 
+        Note: Note to be played
 
         :param octave: octave of the tone like C4
         :param semi_tone: range 0 to MAX_NUM_KEYS (semi tone number on piano)

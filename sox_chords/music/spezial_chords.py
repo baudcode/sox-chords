@@ -25,8 +25,7 @@ def guitar_coords(chords):
                 comninations[k].append(get_note(rand_name, rand_octave))
 
             # create a new chord from this combination
-            root = list(filter(lambda x: x.name
-                               == chord.root.name, comninations[k]))[0]
+            root = list(filter(lambda x: x.name == chord.root.name, comninations[k]))[0]
             c = Chord(root=root, notes=comninations[k])
             c.name = chord.name
             guitar_coords.append(c)

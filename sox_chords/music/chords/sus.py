@@ -15,4 +15,5 @@ class Sus2(Triad):
     notation = [0, Interval.MAJOR_SECOND, Interval.PERFECT_FIFTH]
     name = "sus2"
 
+
 chords = [Sus4, Sus2]

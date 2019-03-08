@@ -55,8 +55,7 @@ class SoxBuilder(object):
         """
         assert(name in self.supported_effects), "Effect " + \
             name + " is not supported"
-        assert((len(params) == len(self.notes) and self.supported_effects[name] == -1)
-               or len(params) == self.supported_effects[name]), "Insufficient arguments for effect " + name
+        assert ((len(params) == len(self.notes) and self.supported_effects[name] == -1) or len(params) == self.supported_effects[name]), "Insufficient arguments for effect %s" % name
 
         self.effects.append([name, params])
         return self
@@ -156,7 +155,7 @@ class Sox(object):
         :param dpn: delay per note
         :param duration: duration of the audio in seconds
         :param fade: delay of the fade 1 = no delay
-        :param norm: normalization 
+        :param norm: normalization
         :param bits: bits per sample value
         :param freq_shift: frequency shift by Hz
         :param noise: instance of class noise
@@ -211,8 +210,7 @@ class Sox(object):
                          reduce(lambda x, y: str(x) + " " + str(y), args))
             output = check_output(args)
             if output != b'':
-                raise SoxException("Sox command " + reduce(lambda x, y: x + " " + y, args)
-                                   + " failed with error: " + str(output))
+                raise SoxException("Sox command " + reduce(lambda x, y: x + " " + y, args) + " failed with error: " + str(output))
         except OSError as e:
             raise SoxException(
                 "Could not find sox, please install sox. sudo apt-get install sox")
@@ -230,5 +228,4 @@ if __name__ == "__main__":
 
     root = get_note("C", 4)
     m = MajorTriad(root)
-    Sox.create_audio(notes=m.get_notes(), output=str(root)
-                     + ".wav", freq_shift=0, noise=TpdfNoise())
+    Sox.create_audio(notes=m.get_notes(), output=str(root) + ".wav", freq_shift=0, noise=TpdfNoise())

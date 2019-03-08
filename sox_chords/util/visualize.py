@@ -217,9 +217,9 @@ def _visualize(data=None, titles=None, sr=22050, size=(22.4, 16.5), v_func=None,
         :param data: list, array of [data array]
         :param sr: int, sampling rate
         :param v_func: func, visualizable function
-        :param out_file: str, output file path 
+        :param out_file: str, output file path
         :param size: tuple, (width, height) must be multiple of (7,5) and is actual_size / dpi (actual_size/ 10)
-        :param action: AudioVisualizer.Action, what to do at the end 
+        :param action: AudioVisualizer.Action, what to do at the end
         :param hide_axes: bool, hide title and axes
         :return: RGBA data(4d np array), if action is GET_DATA, else None
     """
@@ -301,7 +301,7 @@ def visualize_audio_files(v_func=None, sr=22050, size=(22.4, 16.5), audio_files=
 
     """
     Visualize multiple audio files using a histogram function defined in AudioVisualizer
-    
+
     :param v_func: func, visualizable function
     :param sr: int, sampling rate
     :param audio_files: list, array of audio files
@@ -350,16 +350,9 @@ if __name__ == "__main__":
                            bw=False, size=(25.6, 25.6), hide_axes=True)
     show_image(data)
 
-    '''
+    """
     visualize_audio_files(v_func=mel_power_spectrogram,
                               audio_files=files[:16], out_file="mel_power_spectrogram.png", show=False, hide_axes=True)
     visualize_audio_files(v_func=chromagram,
                               audio_files=files[:16], out_file="chromagram.png", show=True)
-                              '''
-"""
-"""
-"""
- 
-
-
-"""
+    """

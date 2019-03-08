@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 from sox_chords import values
 
 # from random import randint
@@ -12,7 +13,7 @@ matplotlib.rcParams['axes.titlesize'] = 8
 matplotlib.rcParams['axes.labelsize'] = 5
 matplotlib.rcParams['xtick.labelsize'] = 5
 matplotlib.rcParams['ytick.labelsize'] = 5
-import matplotlib.pyplot as plt
+
 
 def data_to_image(data=None):
     """
@@ -28,7 +29,7 @@ def data_to_image(data=None):
 
 def rgb2gray(rgb):
     """
-    Convert 
+    Convert
     :param rgb: np.array[3], red, green, blue
     :return: np.array[1]
     """

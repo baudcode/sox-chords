@@ -128,9 +128,9 @@ class ChordProcessor(BatchProcessor):
                  sr=44100, v_func=power_spectrogram, v_size=(256, 256), bw=True, noises=[], shift_range=range(0),
                  bits=16, map_file="mapping.pkl"):
         """
-        Generate 'chords' of frame length 'frame_length' and mix them randomly with pre-loaded samples of 
+        Generate 'chords' of frame length 'frame_length' and mix them randomly with pre-loaded samples of
         audio files of length 'mld' located in 'mix_dir'. Chord will be generated in 'gen_dir' with extension '.wav'.
-        Then a visualization function 'v_func' will be applied and the visualized data of 'v_size' 
+        Then a visualization function 'v_func' will be applied and the visualized data of 'v_size'
         is returned in batch sizes.
 
         :param chords: list, Chords to generate all modifications from
@@ -224,8 +224,7 @@ class ChordProcessor(BatchProcessor):
             mix_files = utils.get_files_with_extension(
                 self.mix_dir, extension=self.ext_mix)
             if len(mix_files) < self.n_load:
-                raise ReaderException("You cannot load " + str(self.n_load) + " files from " + self.mix_dir
-                                      + ", " + str(len(mix_files)) + " files where found. Please provide more files.")
+                raise ReaderException("You cannot load %s  files from %s, %s files where found. Please provide more files." % (str(self.n_load), self.mix_dir, str(len(mix_files))))
 
             # Generate num_load random indexes
             rand_idx = permutation([i for i in range(len(self.mix_dir))])[
@@ -299,8 +298,8 @@ class ChordProcessor(BatchProcessor):
 
         frame dimension: 1x22050 (for 1 second of audio)
         -> modify frame by overlaying samples
-        -> generate visualization using v_func 
-        -> 
+        -> generate visualization using v_func
+        ->
 
         :param batch_size: int, number of batches
         :param test: bool, get test data
@@ -311,7 +310,7 @@ class ChordProcessor(BatchProcessor):
         :param rand_mix_sample: bool, randomize mix file samples
         :param rand_chord: bool, randomize getting new chord or get them in order
         :param bw: bool, convert visualization to gray scale
-        :return: x,y 
+        :return: x,y
         """
         classes = self.get_num_classes()
         idxs = len(self.fgs[0])

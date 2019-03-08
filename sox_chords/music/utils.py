@@ -9,7 +9,7 @@ def get_key(f=440.0, pitch=440.0):
     """
     Get piano key number from frequency
     :param f: frequency of the tone
-    :param pitch: convert pitch of the orchestra 
+    :param pitch: convert pitch of the orchestra
     :return: key number
     """
     return int(log(f / pitch, 2) * 12 + 49)
@@ -29,8 +29,8 @@ def note_to_freq(note=None):
     """
     Transforms a Note into a float frequency
 
-    :param note: core.Note 
-    :return: frequency in hz 
+    :param note: Note
+    :return: frequency in hz
     """
     assert (isinstance(note, Note)), "note is not of instance Note"
     return get_frequency(key=(get_semi_tone(note)))
@@ -44,7 +44,7 @@ def get_notes_from_pattern(root=None, notation=None, core_pattern=None):
 
     :param root: root note
     :param notation: step size notation, e.g. [0,4,7] for a major triad or [0,3,7] for a minor triad
-    :param core_pattern: core note differences of each step, e.g. a triad is [0,2,2] 
+    :param core_pattern: core note differences of each step, e.g. a triad is [0,2,2]
     :return: notes computed with the given parameters
     """
     assert(isinstance(root, Note)), "root is not of instance note"
@@ -56,8 +56,7 @@ def get_notes_from_pattern(root=None, notation=None, core_pattern=None):
         semi_tone = get_semi_tone(root, notation[i])
         core = get_core_from_diff(root, core_pattern[i])
         if Values.DEBUG:
-            print("core: " + str(core), "Step:" + str(semi_tone), "Root core:" + str(root.get_core()), "Root step: "
-                  + str(root.get_semi_tone()), SemiCoreToneMapping.semi_tones[semi_tone])
+            print("core: " + str(core), "Step:" + str(semi_tone), "Root core:" + str(root.get_core()), "Root step: " + str(root.get_semi_tone()), SemiCoreToneMapping.semi_tones[semi_tone])
         assert (core in SemiCoreToneMapping.semi_tones[semi_tone]), \
             "No Note found for root " + str(root) + " and relative half step " +\
             str(notation[i]) + " with core note " + CoreNote.to_string(core)
@@ -69,7 +68,7 @@ def get_notes_from_pattern(root=None, notation=None, core_pattern=None):
 
 
 def get_note(name="", octave=4):
-    """ 
+    """
         Get note from name
         :param name: C, C#, Cb, C##, Cbb, Bbb, B## ...
         :param octave: 1 to 8

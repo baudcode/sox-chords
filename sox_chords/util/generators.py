@@ -16,7 +16,7 @@ class AudioFrameGenerator(object):
     def __init__(self, input_file="", sr=22050, load_duration=5.0):
         """
 
-        :param input_file: str, input audio file 
+        :param input_file: str, input audio file
         :param sr: int, sampling rate
         :param load_duration: float, duration in seconds to load samples from an audio file in advance
         """
@@ -62,8 +62,7 @@ class AudioFrameGenerator(object):
         """
         num_samples = int(frame_length * self.sr)
         if num_samples > len(self.y):
-            raise GeneratorException("Cannot get " + str(num_samples) + " samples from " + self.input_file
-                                     + " which contains only " + str(len(self.y)) + " samples")
+            raise GeneratorException("Cannot get %d  samples from %s  which contains only %d samples" % (num_samples, self.input_file, len(self.y)))
 
         _frames = []
         if num_frames < 0:
@@ -111,7 +110,7 @@ def check_files_loadable(_path="", _sr=22050):
 
 if __name__ == "__main__":
 
-    """ HOW TO: 
+    """ HOW TO:
     from os import listdir, remove
     from os.path import join
     from AudioVisualizer import AudioVisualizer

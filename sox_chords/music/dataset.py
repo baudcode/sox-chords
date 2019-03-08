@@ -18,7 +18,7 @@ class PklDataSet(object):
     def __init__(self, pkl="DataSet.pkl", data_output_dir="download"):
         """
         Initialize DataSet with given pickle file if found
-        
+
         :param pkl: str, location of pickle file which organizes the data
         :param data_output_dir: data output directory of the dumped files, will be created if it does not exist
         """
@@ -48,7 +48,7 @@ class PklDataSet(object):
     def _get(self):
         """
         Retrieves the data set representation
-        :return: dict,  data set 
+        :return: dict,  data set
         """
         pass
 
@@ -74,7 +74,7 @@ class PklDataSet(object):
                     PklDataSet.__download_file(url=urls[i], destination=path, d_num=i, d_nums=len(urls))
 
             except DataSetFetchException as e:
-                print ("Error while downloading data set", e)
+                print("Error while downloading data set", e)
             else:
                 content[urls[i]] = path
 
@@ -162,7 +162,7 @@ class OneClassicalDataSet(PklDataSet):
 
                         piece = ref_piece.split("=")[1].split("-")[1].strip()
                         downloads = self._get_downloads(self.url + ref_piece)
-                        print (instrument, composer, piece, downloads)
+                        print(instrument, composer, piece, downloads)
                         mapping[instrument][composer][piece] = downloads
                         urls += list(map(lambda tempo: downloads[tempo], downloads))
 
@@ -244,6 +244,7 @@ class RoyalityFreeSounds(PklDataSet):
     def url(self):
         return "http://soundbible.com/"
 
+
 if __name__ == '__main__':
     """
     d = OneClassicalDataSet(pkl="OneClassical.pkl", data_output_dir="/mnt/data/datasets/" +
@@ -252,4 +253,4 @@ if __name__ == '__main__':
     d = RoyalityFreeSounds(pkl=RoyalityFreeSounds.__name__,
                            data_output_dir="/mnt/intern/datasets/" + RoyalityFreeSounds.__name__)
 
-    print (d.get())
+    print(d.get())
