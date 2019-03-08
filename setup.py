@@ -50,7 +50,7 @@ class CleanCommand(clean):
 setuptools.setup(
     name='sox_chords',
     version=sox_chords.__version__,
-    description='Generating Guitar Chords from Sox',
+    description='Generating Guitar Chords using sox',
     url='https://github.com/baudcode/sox-chords',
     author='Malte Koch',
     license='MIT',
