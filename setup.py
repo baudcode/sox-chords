@@ -62,7 +62,6 @@ setuptools.setup(
     install_requires=requirements,
     entry_points={
         'console_scripts': [
-            'sox-chords=sox_chords.main:main',
         ],
     },
     ext_modules=[],
