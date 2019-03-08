@@ -46,6 +46,8 @@ class CleanCommand(clean):
                 print('removing %s' % os.path.relpath(path))
                 shutil.rmtree(path)
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 setuptools.setup(
     name='sox_chords',
@@ -54,7 +56,9 @@ setuptools.setup(
     url='https://github.com/baudcode/sox-chords',
     author='Malte Koch',
     license='MIT',
-    download_url='https://github.com/baudcode/sox-chords/archive/v0.1.tar.gz',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    download_url='https://github.com/baudcode/sox-chords/archive/v%s.tar.gz' % (sox_chords.__version__),
     keywods=["chords", "scales", "notes", "guitar", "sox"],
     author_email='malte-koch@gmx.net',
     maintainer='Malte Koch',
@@ -72,7 +76,7 @@ setuptools.setup(
     classifiers=[
         'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
         'Intended Audience :: Developers',      # Define that your audience are developers
-        'Topic :: Software Development :: Build Tools',
+        'Operating System :: POSIX :: Linux',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 2',
