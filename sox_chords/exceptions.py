@@ -2,10 +2,6 @@ class ReaderException(Exception):
     pass
 
 
-class ModelException(Exception):
-    pass
-
-
 class VisualizerException(Exception):
     pass
 
@@ -19,16 +15,4 @@ class DataSetParseException(Exception):
 
 
 class GeneratorException(Exception):
-    pass
-
-
-class ExtractError(Exception):
-    pass
-
-
-class CodecException(Exception):
-    pass
-
-
-class CompressionException(Exception):
     pass
