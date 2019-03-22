@@ -1,9 +1,10 @@
-
 from sox_chords.music.chords.triad import MajorTriad, MinorTriad, AugmentedTriad, DiminishedTriad
 from sox_chords.music.base import Note, NoteCollection
 from sox_chords.music.chord import Chord
 from sox_chords.util.sox import Sox, SoxBuilder, SoxException
 from sox_chords.music.utils import note_to_freq
+from functools import reduce
+
 
 class SoxChord(object):
 
@@ -13,6 +14,7 @@ class SoxChord(object):
         self.dpn = dpn
         self.duration = duration
         self.freq_shift = freq_shift
+
 
 class SoxSong(object):
 
