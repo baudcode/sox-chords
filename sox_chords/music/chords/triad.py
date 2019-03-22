@@ -4,7 +4,7 @@ from sox_chords.music.base import Interval
 
 from sox_chords.music.chord import Chord
 from sox_chords.music.utils import get_notes_from_pattern
-
+from sox_chords.music.utils import get_note
 
 class Triad(Chord):
 
@@ -13,6 +13,9 @@ class Triad(Chord):
     name = "Triad"
 
     def __init__(self, root=None):
+        if type(root) == str:
+            root = get_note(root)
+            
         super(Triad, self).__init__(root=root, notes=get_notes_from_pattern(root, self.notation, self.core_pattern))
 
 
