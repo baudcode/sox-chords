@@ -17,6 +17,9 @@ class Chord(NoteCollection):
     def __str__(self):
         return self.root.get_name() + self.name + ": " + super(Chord, self).__str__()
 
+    def __repr__(self):
+        return self.get_name()
+
     def get_name(self):
         return self.root.get_name() + self.name
 
@@ -31,3 +34,9 @@ class Chord(NoteCollection):
             return self.notes == other.notes
         else:
             return False
+            
+    def __ne__(self, other):
+        if isinstance(other, Chord):
+            return self.notes != other.notes
+        else:
+            return True

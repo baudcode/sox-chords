@@ -163,8 +163,7 @@ class Sox(object):
         """
         notes = list(map(lambda x: Sox.check_note(x), notes))
         if freq_shift != 0:
-            notes = list(
-                map(lambda note: note_to_freq(note) + freq_shift, notes))
+            notes = list(map(lambda note: note_to_freq(note) + freq_shift, notes))
         fade = [0, duration, fade]
         delays = []
         for delay in range(len(notes)):

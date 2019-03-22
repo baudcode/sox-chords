@@ -68,7 +68,7 @@ def fig2data(fig=None, bw=True, crop=None):
 
     # Get the GBA buffer from the figure
     w, h = fig.canvas.get_width_height()
-    buf = np.fromstring(fig.canvas.tostring_rgb(), dtype=values.Values.D_TYPE_IMG)
+    buf = np.frombuffer(fig.canvas.tostring_rgb(), dtype=values.Values.D_TYPE_IMG)
     buf.shape = (h, w, 3)
     if bw:
         buf = rgb2gray(buf)

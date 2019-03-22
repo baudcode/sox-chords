@@ -10,9 +10,10 @@ class Values(object):
     MAX_NUM_KEYS = 12 * 8
     MAX_PARALLEL_THREADS = 8
 
-    IS_NEXT_CORE_SEMI_TONE = [
-        1, 3, 4, 6, 8, 10, 11
-    ]
+    IS_NEXT_CORE_SEMI_TONE = [1, 3, 4, 6, 8, 10, 11]
+    SEMI_TONE_STEPS = [2, 2, 1, 2, 2, 2, 1]
+    MAJOR_SEMI_TONE_STEPS = [2, 2, 1, 2, 2, 2, 1]
+    MINOR_SEMI_TONE_STEPS = [2, 1, 2, 2, 1, 2, 2]
     DEBUG = False
     CORE_NOTES = [
         "C", "D", "E", "F", "G", "A", "B"
