@@ -9,7 +9,7 @@ def test_create_sox_song():
     progression = [triad.MajorTriad(get_note("C")), \
         triad.MajorTriad(get_note("F")), \
         triad.MajorTriad(get_note("G"))]
-    progression = map(lambda chord: SoxChord(chord.notes, duration=1), progression)
+    progression = list(map(lambda chord: SoxChord(chord.notes, duration=1), progression))
     song = SoxSong(progression)
     
     output = tempfile.mktemp(suffix='.wav')
@@ -21,7 +21,7 @@ def test_create_song_from_chord_progression():
     root = get_note("C")
     progression = minor_chord_progression(root)
 
-    progression = map(lambda chord: SoxChord(chord.notes, duration=1), progression)
+    progression = list(map(lambda chord: SoxChord(chord.notes, duration=1), progression))
     song = SoxSong(progression)
     
     output = tempfile.mktemp(suffix='.wav')

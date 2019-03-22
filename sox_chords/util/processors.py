@@ -231,8 +231,7 @@ class ChordProcessor(BatchProcessor):
                 :self.n_load]
 
             # Load random mix files
-            rand_mix_args = list(
-                map(lambda x: (mix_files[x], self.sr, self.mld), rand_idx))
+            rand_mix_args = list(map(lambda x: (mix_files[x], self.sr, self.mld), rand_idx))
             mix_fgs = utils.parallize(AudioFrameGenerator, rand_mix_args)
 
         else:

@@ -195,7 +195,7 @@ class OneClassicalDataSet(PklDataSet):
 
             table = data.find('table')
             a_tags = table.find_all('a')
-            return map(lambda a: a.get('href'), a_tags)
+            return list(map(lambda a: a.get('href'), a_tags))
 
         return PklDataSet.helper(url, get)
 

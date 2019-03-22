@@ -23,7 +23,7 @@ class SoxSong(object):
 
     @property
     def notes(self):
-        return reduce(lambda x, y: x + y, map(lambda x: x.notes, self.sox_chords))
+        return reduce(lambda x, y: x + y, list(map(lambda x: x.notes, self.sox_chords)))
     
     @property
     def freq_shifts(self):
@@ -35,7 +35,7 @@ class SoxSong(object):
         notes = list(map(lambda x: Sox.check_note(x), self.notes))
         notes = [note_to_freq(note) + self.freq_shifts[k] for k, note in enumerate(notes)]
 
-        fade = [0, sum(map(lambda x: x.duration, self.sox_chords)), fade]
+        fade = [0, sum(list(map(lambda x: x.duration, self.sox_chords))), fade]
         curdelay = 0
         delays = []
 
