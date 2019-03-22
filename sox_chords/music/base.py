@@ -1,6 +1,6 @@
 from abc import abstractmethod
 from functools import reduce
-
+from sox_chords.values import Values
 
 class Interval(object):
     PERFECT_UNISON = 0
@@ -116,11 +116,36 @@ class Note(object):
             name += "#"
         return Note(core=core, semi_tone=semi_tone, name=name)
 
+    @staticmethod
+    def from_core_and_semi_tone(core, semi_tone):
+        rel_semi_tone = semi_tone % Values.MAX_SEMI_TONES
+        core_diff = rel_semi_tone - sum(Values.SEMI_TONE_STEPS[:core])
+        name = CoreNote.to_string(core)
+        if core_diff < 0:
+            name += "b" * abs(core_diff)
+        elif core_diff > 0:
+            name += "#" * core_diff
+        
+        return Note(core=core, semi_tone=semi_tone, name=name)
+        
+
     def __str__(self):
         return self.name + str(self.octave)
 
     def __repr__(self):
         return self.name + str(self.octave)
+    
+    def __eq__(self, other):
+        if isinstance(other, Note):
+            return other.core == self.core and other.semi_tone == self.semi_tone
+        else:
+            return False
+
+    def __ne__(self, other):
+        if isinstance(other, Note):
+            return other.core != self.core or other.semi_tone != self.semi_tone
+        else:
+            return True
 
 
 class NoteCollection(object):

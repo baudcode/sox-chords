@@ -74,3 +74,4 @@ checkpoints/
 .pytest_cache/
 **.ipynb_checkpoints/
 .venv/
+logs/
