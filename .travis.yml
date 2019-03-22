@@ -20,3 +20,11 @@ cache: pip
 script:
     - python setup.py install
     - pytest tests/
+
+deploy:
+  provider: pypi
+  user: $PYPI_USERNAME
+  password: $PYPI_PASSWORD
+  skip_existing: true
+  on:
+    tags: true
